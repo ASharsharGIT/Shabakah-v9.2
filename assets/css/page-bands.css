@@ -1,0 +1,411 @@
+/* ===== INNER PAGE BANDS + CARD SURFACES =====
+   Services / Solutions / Partners / Contact
+   Visual only — mirrors homepage light/dark contrast
+   ================================================ */
+
+/* --- Wave fills matching section destinations --- */
+.section-wave--to-slate svg path {
+    fill: #1a2438;
+}
+
+.section-wave--to-navy-soft svg path {
+    fill: #121c2e;
+}
+
+.section-wave--to-cyan svg path {
+    fill: #0c3540;
+}
+
+.section-wave--to-air svg path {
+    fill: #C5DFF0;
+}
+
+/* ========== SERVICES ========== */
+body.service-detail-page--services .service-detail-section:not(.bg-gradient) {
+    background:
+        radial-gradient(ellipse 70% 50% at 100% 0%, rgba(0, 196, 230, 0.08), transparent 55%),
+        #121c2e;
+}
+
+body.service-detail-page--services .service-detail-section.bg-gradient {
+    background: linear-gradient(
+        180deg,
+        rgba(0, 196, 230, 0.42) 0%,
+        rgba(0, 196, 230, 0.18) 16%,
+        #0c3540 40%,
+        #0a2228 68%,
+        #0c1420 100%
+    );
+}
+
+body.service-detail-page--services .feature-item.glass-card {
+    background: linear-gradient(165deg, rgba(248, 252, 255, 0.96) 0%, rgba(226, 239, 248, 0.92) 100%);
+    border: 1px solid rgba(0, 196, 230, 0.28);
+    border-inline-start: 4px solid var(--teal-vivid);
+    box-shadow: var(--shadow-card-light);
+    color: var(--text-on-light);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+body.service-detail-page--services .feature-item.glass-card:nth-child(even) {
+    border-inline-start-color: var(--gold-bright);
+    border-color: rgba(255, 184, 0, 0.28);
+}
+
+body.service-detail-page--services .feature-item h4,
+body.service-detail-page--services .feature-item p {
+    color: var(--text-on-light);
+}
+
+body.service-detail-page--services .feature-item p {
+    color: var(--text-on-light-muted);
+}
+
+body.service-detail-page--services .service-detail-image.glass-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(0, 196, 230, 0.35);
+    box-shadow: var(--shadow-card-on-dark);
+    overflow: hidden;
+}
+
+/* ========== SOLUTIONS ========== */
+body.service-detail-page--solutions .solutions-section {
+    background: var(--gradient-band-air-soft);
+    color: var(--text-on-light);
+}
+
+body.service-detail-page--solutions .solutions-section .section-title {
+    background: linear-gradient(135deg, #0a728a 0%, #087896 50%, #0c5570 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.service-detail-page--solutions .solutions-section .section-description {
+    color: var(--text-on-light-muted);
+}
+
+body.service-detail-page--solutions .solutions-section .section-tag.glass-pill {
+    background: var(--gradient-card-frost);
+    color: var(--text-on-light);
+    border: 1px solid var(--border-on-light-teal);
+}
+
+body.service-detail-page--solutions .service-detail-section:not(.bg-gradient) {
+    background:
+        radial-gradient(ellipse 60% 45% at 0% 100%, rgba(0, 196, 230, 0.1), transparent 50%),
+        #1a2438;
+}
+
+body.service-detail-page--solutions .service-detail-section.bg-gradient {
+    background: linear-gradient(
+        180deg,
+        rgba(0, 196, 230, 0.28) 0%,
+        rgba(0, 196, 230, 0.1) 20%,
+        #0f2830 48%,
+        #121c2e 100%
+    );
+}
+
+body.service-detail-page--solutions .service-detail-grid {
+    background: linear-gradient(160deg, rgba(248, 252, 255, 0.1) 0%, rgba(0, 196, 230, 0.06) 100%);
+    border: 1px solid rgba(0, 196, 230, 0.28);
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.32),
+        0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+body.service-detail-page--solutions .approach-section {
+    background: linear-gradient(
+        180deg,
+        rgba(0, 196, 230, 0.35) 0%,
+        #0c3540 35%,
+        #0a1628 100%
+    );
+}
+
+body.service-detail-page--solutions .approach-section .section-title {
+    background: linear-gradient(135deg, #00C4E6 0%, #0891B2 55%, #00C4E6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.service-detail-page--solutions .approach-section .section-tag.glass-pill {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(0, 196, 230, 0.35);
+    color: #fff;
+}
+
+body.service-detail-page--solutions .differentiators-section {
+    background: var(--gradient-band-air-soft);
+    color: var(--text-on-light);
+}
+
+body.service-detail-page--solutions .differentiators-section .section-title {
+    background: linear-gradient(135deg, #0a728a 0%, #087896 50%, #0c5570 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.service-detail-page--solutions .differentiators-section .section-tag.glass-pill {
+    background: var(--gradient-card-frost);
+    color: var(--text-on-light);
+    border: 1px solid var(--border-on-light-teal);
+}
+
+body.service-detail-page--solutions .approach-step.glass-card {
+    background: var(--gradient-card-frost);
+    border: 1px solid var(--border-on-light-teal);
+    border-top: 3px solid var(--teal-vivid);
+    box-shadow: var(--shadow-card-light);
+    color: var(--text-on-light);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+body.service-detail-page--solutions .approach-step:nth-child(even).glass-card {
+    border-top-color: var(--gold-bright);
+    border-color: rgba(255, 184, 0, 0.3);
+}
+
+body.service-detail-page--solutions .approach-step p {
+    color: var(--text-on-light-muted);
+}
+
+body.service-detail-page--solutions .diff-card.glass-card {
+    background: var(--gradient-card-frost);
+    border: 1px solid var(--border-on-light-teal);
+    border-inline-start: 4px solid var(--teal-vivid);
+    box-shadow: var(--shadow-card-light);
+    color: var(--text-on-light);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+body.service-detail-page--solutions .diff-card:nth-child(even).glass-card {
+    border-inline-start-color: var(--gold-bright);
+    border-color: rgba(255, 184, 0, 0.28);
+}
+
+body.service-detail-page--solutions .diff-card p {
+    color: var(--text-on-light-muted);
+}
+
+/* ========== PARTNERS ========== */
+.partners-clients {
+    background: var(--gradient-band-air-soft);
+    color: var(--text-on-light);
+}
+
+.partners-clients .section-title {
+    background: linear-gradient(135deg, #0a728a 0%, #087896 50%, #0c5570 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.partners-clients .section-tag.glass-pill {
+    background: var(--gradient-card-frost);
+    color: var(--text-on-light);
+    border: 1px solid var(--border-on-light-teal);
+}
+
+.partners-clients .client-logo-tile.glass-card {
+    background: #fff;
+    border: 1px solid var(--border-on-light);
+    box-shadow: var(--shadow-card-light);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+.partners-clients .client-logo-tile.glass-card:nth-child(odd) {
+    border-bottom: 3px solid rgba(0, 196, 230, 0.45);
+}
+
+.partners-clients .client-logo-tile.glass-card:nth-child(even) {
+    border-bottom: 3px solid rgba(255, 184, 0, 0.4);
+}
+
+.partners-section {
+    background:
+        radial-gradient(ellipse 50% 40% at 80% 20%, rgba(0, 196, 230, 0.12), transparent 55%),
+        linear-gradient(180deg, #0c1420 0%, #0a1628 50%, #121c2e 100%);
+}
+
+.partners-section .category-header .section-tag.glass-pill {
+    border-color: rgba(0, 196, 230, 0.35);
+}
+
+.partners-section .partner-card.glass-card {
+    background: #fff !important;
+    border: 1px solid var(--border-on-light-teal);
+    box-shadow: var(--shadow-card-light);
+}
+
+.partners-section .partner-card.glass-card:nth-child(odd)::before {
+    background: linear-gradient(90deg, #00C4E6, #0891B2, #00C4E6);
+    background-size: 200% 100%;
+    opacity: 1;
+}
+
+.partners-section .partner-card.glass-card:nth-child(even)::before {
+    background: linear-gradient(90deg, #FFB800, #f59e0b, #FFB800);
+    background-size: 200% 100%;
+    opacity: 1;
+}
+
+.benefits-section {
+    background: linear-gradient(
+        180deg,
+        rgba(0, 196, 230, 0.32) 0%,
+        #0c3540 40%,
+        #0a1628 100%
+    );
+}
+
+.benefits-section .section-title {
+    background: linear-gradient(135deg, #00C4E6 0%, #0891B2 55%, #00C4E6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.benefits-section .section-tag.glass-pill {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(0, 196, 230, 0.35);
+    color: #fff;
+}
+
+.benefits-section .benefit-card.glass-card {
+    background: var(--gradient-card-frost);
+    border: 1px solid var(--border-on-light-teal);
+    border-inline-start: 4px solid var(--teal-vivid);
+    box-shadow: var(--shadow-card-light);
+    color: var(--text-on-light);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    padding: 1.25rem;
+}
+
+.benefits-section .benefit-card:nth-child(even).glass-card {
+    border-inline-start-color: var(--gold-bright);
+    border-color: rgba(255, 184, 0, 0.28);
+}
+
+.benefits-section .benefit-card p,
+.benefits-section .benefit-card h3 {
+    color: var(--text-on-light);
+}
+
+.benefits-section .benefit-card p {
+    color: var(--text-on-light-muted);
+}
+
+.benefits-section .benefit-icon {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 0.75rem;
+    background: rgba(0, 196, 230, 0.12);
+    border: 1px solid rgba(0, 196, 230, 0.25);
+}
+
+.benefits-section .benefit-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+}
+
+.benefits-section .benefit-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+/* ========== CONTACT ========== */
+.contact-section {
+    background: var(--gradient-band-air-soft);
+    color: var(--text-on-light);
+}
+
+.contact-section .section-title {
+    background: linear-gradient(135deg, #0a728a 0%, #087896 50%, #0c5570 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.contact-section .section-description {
+    color: var(--text-on-light-muted);
+}
+
+.contact-section .contact-form-wrapper.glass-card {
+    background: var(--gradient-card-frost);
+    border: 1px solid var(--border-on-light-teal);
+    box-shadow: var(--shadow-card-light);
+    color: var(--text-on-light);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+.contact-section .contact-info-card.glass-card {
+    background: var(--gradient-card-frost);
+    border: 1px solid var(--border-on-light-teal);
+    border-inline-start: 4px solid var(--teal-vivid);
+    box-shadow: var(--shadow-card-light);
+    color: var(--text-on-light);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+.contact-section .contact-info-card:nth-child(even).glass-card {
+    border-inline-start-color: var(--gold-bright);
+    border-color: rgba(255, 184, 0, 0.28);
+}
+
+.contact-section .contact-info-card h3,
+.contact-section .contact-info-card p,
+.contact-section .contact-info-card a {
+    color: var(--text-on-light);
+}
+
+.contact-section .contact-info-card .text-muted {
+    color: var(--text-on-light-muted);
+}
+
+.contact-section .contact-social.glass-card {
+    background: var(--gradient-card-frost);
+    border: 1px solid var(--border-on-light-teal);
+    box-shadow: var(--shadow-card-light);
+    color: var(--text-on-light);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+.contact-section .contact-social h3 {
+    color: var(--text-on-light);
+}
+
+.contact-section label {
+    color: var(--text-on-light);
+}
+
+.contact-section .glass-input {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(12, 35, 64, 0.18);
+    color: var(--text-on-light);
+}
+
+.map-section {
+    background:
+        radial-gradient(ellipse 50% 60% at 50% 0%, rgba(0, 196, 230, 0.15), transparent 60%),
+        #0a1628;
+    padding: var(--space-3xl) var(--space-xl) var(--space-4xl);
+}
+
+.map-section .map-container.glass-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(0, 196, 230, 0.35);
+    box-shadow: var(--shadow-card-on-dark);
+}

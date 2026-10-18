@@ -1,0 +1,58 @@
+/* ===== SECTION WAVE DIVIDERS ===== */
+.section-wave {
+    display: block;
+    width: 100%;
+    line-height: 0;
+    overflow: hidden;
+    margin-bottom: -1px;
+    pointer-events: none;
+}
+
+.section-wave svg {
+    display: block;
+    width: 100%;
+    height: clamp(48px, 6vw, 80px);
+}
+
+.section-wave--to-light svg path {
+    fill: #C5DFF0;
+}
+
+.section-wave--to-white svg path {
+    fill: #fff;
+}
+
+.section-wave--to-dark svg path {
+    fill: #0a1628;
+}
+
+.section-wave--to-slate svg path {
+    fill: #1a2438;
+}
+
+.section-wave--to-navy-soft svg path {
+    fill: #121c2e;
+}
+
+.section-wave--to-cyan svg path {
+    fill: #0c3540;
+}
+
+.section-wave--to-air svg path {
+    fill: #C5DFF0;
+}
+
+.trust-band .section-wave {
+    margin-bottom: -1px;
+}
+
+html[dir="rtl"] .section-wave svg,
+body.rtl .section-wave svg {
+    transform: scaleX(-1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .section-wave {
+        opacity: 1;
+    }
+}

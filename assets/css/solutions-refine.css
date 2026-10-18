@@ -1,0 +1,152 @@
+/* ===== SOLUTIONS PAGE — quiet refine (minimal tech) =====
+   Subtract noise, one cyan language, gold only on Goal.
+   ================================================ */
+
+/* Remove heavy overlays / grid on solution bands */
+body.service-detail-page--solutions .service-detail-section::before,
+body.service-detail-page--solutions .service-detail-section.bg-gradient::after {
+    content: none;
+    display: none;
+}
+
+/* Calm odd / even bands — lifted slate (layout override for featured/duo/strip) */
+body.service-detail-page--solutions .service-detail-section:not(.bg-gradient) {
+    background: #1a2740;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    border-top: none;
+    border-bottom: none;
+}
+
+body.service-detail-page--solutions .service-detail-section.bg-gradient {
+    background: #1c2b45;
+    border-top: 1px solid rgba(0, 196, 230, 0.22);
+    border-bottom: 1px solid rgba(0, 196, 230, 0.1);
+    box-shadow: none;
+}
+
+/* Content panel: slightly brighter glass, cyan edge */
+body.service-detail-page--solutions .service-detail-grid {
+    background: rgba(255, 255, 255, 0.055);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 196, 230, 0.16);
+    box-shadow: 0 8px 28px rgba(0, 16, 36, 0.2);
+    padding: clamp(1.25rem, 2.5vw, 2rem);
+    gap: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+/* Title: same teal→gold brand gradient as homepage hero "IT Foundation" */
+body.service-detail-page--solutions .service-detail-section .section-title {
+    background: linear-gradient(135deg, var(--teal-vivid) 0%, var(--gold-bright) 50%, var(--teal-vivid) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    animation: gradientShimmer 8s linear infinite;
+}
+
+body.service-detail-page--solutions .service-detail-header .section-title::after {
+    width: 48px;
+    height: 2px;
+    background: #00c4e6;
+    transition: width 0.5s ease;
+}
+
+body.service-detail-page--solutions .service-detail-header.animate-in .section-title::after {
+    width: 88px;
+}
+
+/* Icon: thin cyan, slight glow */
+body.service-detail-page--solutions .service-detail-icon {
+    background: rgba(0, 196, 230, 0.12);
+    border: 1px solid rgba(0, 196, 230, 0.38);
+    color: #00c4e6;
+    box-shadow: 0 0 14px rgba(0, 196, 230, 0.12);
+}
+
+/* Bullets + goal */
+body.service-detail-page--solutions .service-detail-body .service-bullets {
+    color: rgba(226, 232, 240, 0.82);
+    font-size: 1.05rem;
+    line-height: 1.75;
+}
+
+body.service-detail-page--solutions .service-detail-body .service-bullets li::marker {
+    color: #00c4e6;
+}
+
+body.service-detail-page--solutions .service-detail-body .service-goal {
+    color: rgba(203, 213, 225, 0.75);
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin-top: 0.25rem;
+}
+
+/* Gold reserved for Goal label only */
+body.service-detail-page--solutions .service-detail-body .service-goal strong {
+    color: #ffb800;
+    font-weight: 700;
+}
+
+/* Image — cyan frame, soft hover (no rainbow) */
+body.service-detail-page--solutions .service-detail-image.glass-card {
+    border: 1px solid rgba(0, 196, 230, 0.28);
+    box-shadow: 0 10px 32px rgba(0, 16, 36, 0.32);
+    background: #0d1826;
+}
+
+body.service-detail-page--solutions .service-detail-image::before {
+    opacity: 0;
+    background: linear-gradient(135deg, rgba(0, 196, 230, 0.55), rgba(0, 196, 230, 0.1));
+}
+
+body.service-detail-page--solutions .service-detail-image:hover::before {
+    opacity: 0.4;
+}
+
+body.service-detail-page--solutions .service-detail-image:hover {
+    box-shadow: 0 12px 36px rgba(0, 16, 36, 0.36), 0 0 24px rgba(0, 196, 230, 0.12);
+}
+
+/* Idle Ken Burns lives in solutions-layout.css — no hover scale fight */
+
+/* Overview stays light and calm */
+body.service-detail-page--solutions .solutions-section {
+    background: var(--gradient-band-air-soft);
+}
+
+/* Approach / differentiators — still present, less loud */
+body.service-detail-page--solutions .approach-section {
+    background: #0e1a28;
+    border-top: 1px solid rgba(0, 196, 230, 0.2);
+}
+
+body.service-detail-page--solutions .approach-step.glass-card {
+    border-top-width: 2px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+body.service-detail-page--solutions .approach-step:nth-child(even).glass-card {
+    border-top-color: var(--teal-vivid);
+    border-color: var(--border-on-light-teal);
+}
+
+body.service-detail-page--solutions .diff-card:nth-child(even).glass-card {
+    border-inline-start-color: var(--teal-vivid);
+    border-color: var(--border-on-light-teal);
+}
+
+/* Hero chips — quieter hover */
+body.service-detail-page--solutions a.hero-solution-chip:hover,
+body.service-detail-page--solutions a.hero-solution-chip:focus-visible {
+    border-color: rgba(0, 196, 230, 0.4);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+body.service-detail-page--solutions a.hero-solution-chip:hover .hero-stat-label,
+body.service-detail-page--solutions a.hero-solution-chip:focus-visible .hero-stat-label {
+    color: #00c4e6;
+}

@@ -1,0 +1,315 @@
+/* ===== DECORATIVE DOT PATTERNS (Integratech-style, clearly visible) ===== */
+.section-dots {
+    position: relative;
+}
+
+/* --- Proof section: two bold corner clusters --- */
+.proof-section.section-dots > .container::before,
+.proof-section.section-dots > .container::after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+    width: 240px;
+    height: 240px;
+    background-image: radial-gradient(circle, rgba(0, 172, 205, 0.75) 3px, transparent 3px);
+    background-size: 22px 22px;
+}
+
+.proof-section.section-dots > .container::before {
+    top: -10px;
+    left: -2.5rem;
+}
+
+.proof-section.section-dots > .container::after {
+    bottom: -20px;
+    right: -2.5rem;
+}
+
+.proof-section.section-dots .section-header,
+.proof-section.section-dots .proof-showcase-layout {
+    position: relative;
+    z-index: 1;
+}
+
+/* --- Services (dark navy band): brighter teal dots beside header --- */
+.services-section.section-dots .section-header::before {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    top: -30px;
+    left: -1rem;
+    width: 190px;
+    height: 190px;
+    background-image: radial-gradient(circle, rgba(0, 217, 255, 0.65) 3px, transparent 3px);
+    background-size: 22px 22px;
+    z-index: 0;
+}
+
+.services-section.section-dots .section-header::after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    bottom: -30px;
+    right: -1rem;
+    width: 160px;
+    height: 160px;
+    background-image: radial-gradient(circle, rgba(0, 217, 255, 0.5) 3px, transparent 3px);
+    background-size: 24px 24px;
+    z-index: 0;
+}
+
+.services-section.section-dots .section-header {
+    position: relative;
+}
+
+.services-section.section-dots .section-header > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* --- Tech: dots on container ::before (aurora keeps section ::after) --- */
+.tech-section.section-dots > .container::before {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+    bottom: 4%;
+    left: -2rem;
+    width: 220px;
+    height: 220px;
+    background-image: radial-gradient(circle, rgba(0, 172, 205, 0.7) 3px, transparent 3px);
+    background-size: 22px 22px;
+}
+
+.tech-section.section-dots > .container > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* --- Carousel background corners (dark band → bright dots) --- */
+.carousel-bg.section-dots::before,
+.carousel-bg.section-dots::after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    z-index: 2;
+    width: 200px;
+    height: 200px;
+    background-image: radial-gradient(circle, rgba(0, 217, 255, 0.55) 3px, transparent 3px);
+    background-size: 24px 24px;
+}
+
+.carousel-bg.section-dots::before {
+    top: 5%;
+    right: 4%;
+}
+
+.carousel-bg.section-dots::after {
+    bottom: 8%;
+    left: 3%;
+    opacity: 0.75;
+}
+
+/* --- RTL mirrors --- */
+html[dir="rtl"] .proof-section.section-dots > .container::before,
+body.rtl .proof-section.section-dots > .container::before {
+    left: auto;
+    right: -2.5rem;
+}
+
+html[dir="rtl"] .proof-section.section-dots > .container::after,
+body.rtl .proof-section.section-dots > .container::after {
+    right: auto;
+    left: -2.5rem;
+}
+
+html[dir="rtl"] .services-section.section-dots .section-header::before,
+body.rtl .services-section.section-dots .section-header::before {
+    left: auto;
+    right: -1rem;
+}
+
+html[dir="rtl"] .services-section.section-dots .section-header::after,
+body.rtl .services-section.section-dots .section-header::after {
+    right: auto;
+    left: -1rem;
+}
+
+html[dir="rtl"] .tech-section.section-dots > .container::before,
+body.rtl .tech-section.section-dots > .container::before {
+    left: auto;
+    right: -2rem;
+}
+
+html[dir="rtl"] .carousel-bg.section-dots::before,
+body.rtl .carousel-bg.section-dots::before {
+    right: auto;
+    left: 4%;
+}
+
+html[dir="rtl"] .carousel-bg.section-dots::after,
+body.rtl .carousel-bg.section-dots::after {
+    left: auto;
+    right: 3%;
+}
+
+/* --- Inner pages: generic section-dots clusters --- */
+.service-detail-section.section-dots > .container::before,
+.service-detail-section.section-dots > .container::after,
+.solutions-section.section-dots > .container::before,
+.approach-section.section-dots > .container::before,
+.differentiators-section.section-dots > .container::before,
+.partners-clients.section-dots > .container::before,
+.partners-clients.section-dots > .container::after,
+.partners-section.section-dots > .container::before,
+.benefits-section.section-dots > .container::before,
+.contact-section.section-dots > .container::before,
+.contact-section.section-dots > .container::after,
+.map-section.section-dots::before {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+    width: 200px;
+    height: 200px;
+    background-image: radial-gradient(circle, rgba(0, 196, 230, 0.55) 3px, transparent 3px);
+    background-size: 22px 22px;
+}
+
+.service-detail-section.section-dots > .container,
+.solutions-section.section-dots > .container,
+.approach-section.section-dots > .container,
+.differentiators-section.section-dots > .container,
+.partners-clients.section-dots > .container,
+.partners-section.section-dots > .container,
+.benefits-section.section-dots > .container,
+.contact-section.section-dots > .container,
+.map-section.section-dots {
+    position: relative;
+}
+
+.service-detail-section.section-dots > .container::before,
+.solutions-section.section-dots > .container::before,
+.approach-section.section-dots > .container::before,
+.partners-clients.section-dots > .container::before,
+.partners-section.section-dots > .container::before,
+.benefits-section.section-dots > .container::before,
+.contact-section.section-dots > .container::before {
+    top: -8px;
+    left: -2rem;
+}
+
+.service-detail-section.section-dots > .container::after,
+.partners-clients.section-dots > .container::after,
+.contact-section.section-dots > .container::after,
+.differentiators-section.section-dots > .container::before {
+    bottom: -16px;
+    right: -2rem;
+    top: auto;
+    left: auto;
+}
+
+.differentiators-section.section-dots > .container::before {
+    top: auto;
+    bottom: -16px;
+    right: -2rem;
+    left: auto;
+}
+
+.map-section.section-dots::before {
+    top: 12%;
+    right: 4%;
+    width: 160px;
+    height: 160px;
+}
+
+.service-detail-section.section-dots > .container > *,
+.solutions-section.section-dots > .container > *,
+.approach-section.section-dots > .container > *,
+.differentiators-section.section-dots > .container > *,
+.partners-clients.section-dots > .container > *,
+.partners-section.section-dots > .container > *,
+.benefits-section.section-dots > .container > *,
+.contact-section.section-dots > .container > *,
+.map-section.section-dots > * {
+    position: relative;
+    z-index: 1;
+}
+
+html[dir="rtl"] .service-detail-section.section-dots > .container::before,
+html[dir="rtl"] .solutions-section.section-dots > .container::before,
+html[dir="rtl"] .approach-section.section-dots > .container::before,
+html[dir="rtl"] .partners-clients.section-dots > .container::before,
+html[dir="rtl"] .partners-section.section-dots > .container::before,
+html[dir="rtl"] .benefits-section.section-dots > .container::before,
+html[dir="rtl"] .contact-section.section-dots > .container::before,
+body.rtl .service-detail-section.section-dots > .container::before,
+body.rtl .solutions-section.section-dots > .container::before,
+body.rtl .approach-section.section-dots > .container::before,
+body.rtl .partners-clients.section-dots > .container::before,
+body.rtl .partners-section.section-dots > .container::before,
+body.rtl .benefits-section.section-dots > .container::before,
+body.rtl .contact-section.section-dots > .container::before {
+    left: auto;
+    right: -2rem;
+}
+
+html[dir="rtl"] .service-detail-section.section-dots > .container::after,
+html[dir="rtl"] .partners-clients.section-dots > .container::after,
+html[dir="rtl"] .contact-section.section-dots > .container::after,
+html[dir="rtl"] .differentiators-section.section-dots > .container::before,
+body.rtl .service-detail-section.section-dots > .container::after,
+body.rtl .partners-clients.section-dots > .container::after,
+body.rtl .contact-section.section-dots > .container::after,
+body.rtl .differentiators-section.section-dots > .container::before {
+    right: auto;
+    left: -2rem;
+}
+
+html[dir="rtl"] .map-section.section-dots::before,
+body.rtl .map-section.section-dots::before {
+    right: auto;
+    left: 4%;
+}
+
+@media (max-width: 853px) {
+    .proof-section.section-dots > .container::before,
+    .proof-section.section-dots > .container::after,
+    .tech-section.section-dots > .container::before {
+        width: 150px;
+        height: 150px;
+        background-size: 20px 20px;
+    }
+
+    .services-section.section-dots .section-header::before,
+    .services-section.section-dots .section-header::after {
+        width: 120px;
+        height: 120px;
+        background-size: 20px 20px;
+    }
+
+    .carousel-bg.section-dots::before,
+    .carousel-bg.section-dots::after {
+        width: 130px;
+        height: 130px;
+        background-size: 22px 22px;
+    }
+
+    .service-detail-section.section-dots > .container::before,
+    .service-detail-section.section-dots > .container::after,
+    .solutions-section.section-dots > .container::before,
+    .approach-section.section-dots > .container::before,
+    .differentiators-section.section-dots > .container::before,
+    .partners-clients.section-dots > .container::before,
+    .partners-clients.section-dots > .container::after,
+    .partners-section.section-dots > .container::before,
+    .benefits-section.section-dots > .container::before,
+    .contact-section.section-dots > .container::before,
+    .contact-section.section-dots > .container::after,
+    .map-section.section-dots::before {
+        width: 120px;
+        height: 120px;
+        background-size: 20px 20px;
+    }
+}

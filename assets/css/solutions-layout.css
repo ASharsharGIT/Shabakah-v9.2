@@ -1,0 +1,541 @@
+/* ===== SOLUTIONS PAGE — layout rhythm + lit cyan system =====
+   Featured → compact duo → featured → compact duo → strip
+   One accent (#00c4e6). No copy change.
+   ========================================================= */
+
+body.service-detail-page--solutions .solutions-duo {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    --duo-gap: 2.55rem;
+    --node-size: 28px;
+    --notch-depth: 28px;
+    --notch-span: 46px;
+    --notch-mask-right: radial-gradient(
+        ellipse var(--notch-depth) var(--notch-span) at 100% 50%,
+        transparent 98%,
+        #000 100%
+    );
+    --notch-mask-left: radial-gradient(
+        ellipse var(--notch-depth) var(--notch-span) at 0% 50%,
+        transparent 98%,
+        #000 100%
+    );
+    --notch-mask-bottom: radial-gradient(
+        ellipse var(--notch-span) var(--notch-depth) at 50% 100%,
+        transparent 98%,
+        #000 100%
+    );
+    --notch-mask-top: radial-gradient(
+        ellipse var(--notch-span) var(--notch-depth) at 50% 0%,
+        transparent 98%,
+        #000 100%
+    );
+    gap: var(--duo-gap);
+    padding: 1.5rem clamp(1rem, 3vw, 2rem) 2rem;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+html[dir="rtl"] body.service-detail-page--solutions .solutions-duo,
+body.rtl.service-detail-page--solutions .solutions-duo {
+    --notch-mask-right: radial-gradient(
+        ellipse var(--notch-depth) var(--notch-span) at 0% 50%,
+        transparent 98%,
+        #000 100%
+    );
+    --notch-mask-left: radial-gradient(
+        ellipse var(--notch-depth) var(--notch-span) at 100% 50%,
+        transparent 98%,
+        #000 100%
+    );
+}
+
+@media (min-width: 960px) {
+    body.service-detail-page--solutions .solutions-duo {
+        grid-template-columns: 1fr 1fr;
+        --duo-gap: 2.75rem;
+        --node-size: 30px;
+        --notch-depth: 32px;
+        --notch-span: 52px;
+        gap: var(--duo-gap);
+        padding-block: 2rem 2.5rem;
+        align-items: stretch;
+    }
+
+    /* Equal-height stretch: section → container → card grid */
+    body.service-detail-page--solutions .solutions-duo > .service-detail-section {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: visible;
+    }
+
+    body.service-detail-page--solutions .solutions-duo > .service-detail-section > .container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        overflow: visible;
+    }
+
+    body.service-detail-page--solutions .solutions-duo .solution-layout--compact .service-detail-grid,
+    body.service-detail-page--solutions .solutions-duo .solution-layout--compact .service-detail-grid.reverse {
+        flex: 1;
+    }
+
+    /* Half-circle sockets on facing edges (same language as homepage) */
+    body.service-detail-page--solutions .solutions-duo > .service-detail-section:first-child .service-detail-grid,
+    body.service-detail-page--solutions .solutions-duo > .service-detail-section:first-child .service-detail-grid.reverse {
+        -webkit-mask-image: var(--notch-mask-right);
+        mask-image: var(--notch-mask-right);
+    }
+
+    body.service-detail-page--solutions .solutions-duo > .service-detail-section:last-child .service-detail-grid,
+    body.service-detail-page--solutions .solutions-duo > .service-detail-section:last-child .service-detail-grid.reverse {
+        -webkit-mask-image: var(--notch-mask-left);
+        mask-image: var(--notch-mask-left);
+    }
+
+    /* Soft vertical spine between duo cards */
+    body.service-detail-page--solutions .solutions-duo::before {
+        content: "";
+        position: absolute;
+        top: 18%;
+        bottom: 18%;
+        left: 50%;
+        width: 1.5px;
+        transform: translateX(-50%);
+        background: linear-gradient(
+            180deg,
+            transparent 0%,
+            rgba(0, 196, 230, 0.25) 15%,
+            rgba(0, 196, 230, 0.7) 50%,
+            rgba(0, 196, 230, 0.25) 85%,
+            transparent 100%
+        );
+        pointer-events: none;
+        z-index: 5;
+    }
+
+    /* Cyan ring node in the gap */
+    body.service-detail-page--solutions .solutions-duo::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: var(--node-size);
+        height: var(--node-size);
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background: #081428;
+        border: 2.5px solid rgba(0, 196, 230, 0.95);
+        box-shadow: 0 0 18px rgba(0, 196, 230, 0.5);
+        pointer-events: none;
+        z-index: 6;
+    }
+}
+
+body.service-detail-page--solutions .solutions-duo .service-detail-section,
+body.service-detail-page--solutions .solutions-duo .service-detail-section.bg-gradient {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+}
+
+/* Keep chip / nav jump targets clear of sticky header */
+body.service-detail-page--solutions .solution-layout--featured,
+body.service-detail-page--solutions .solution-layout--compact,
+body.service-detail-page--solutions .solution-layout--strip {
+    scroll-margin-top: 5.5rem;
+}
+
+body.service-detail-page--solutions .solutions-duo .service-detail-section > .container {
+    max-width: none;
+    width: 100%;
+    padding: 0;
+}
+
+/* --- Compact cards inside duo: lit panels --- */
+body.service-detail-page--solutions .solution-layout--compact .service-detail-grid,
+body.service-detail-page--solutions .solution-layout--compact .service-detail-grid.reverse {
+    display: flex;
+    flex-direction: column;
+    direction: ltr;
+    gap: 0;
+    padding: 0;
+    overflow: hidden;
+    background:
+        linear-gradient(180deg, rgba(0, 196, 230, 0.07) 0%, transparent 42%),
+        rgba(22, 34, 52, 0.92);
+    border: 1px solid rgba(0, 196, 230, 0.28);
+    border-radius: 18px;
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.08) inset,
+        0 12px 32px rgba(0, 20, 40, 0.28),
+        0 0 0 1px rgba(0, 196, 230, 0.06);
+    min-height: 100%;
+    width: 100%;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.service-detail-page--solutions .solution-layout--compact .service-detail-grid:hover {
+    border-color: rgba(0, 196, 230, 0.48);
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.1) inset,
+        0 16px 40px rgba(0, 20, 40, 0.32),
+        0 0 28px rgba(0, 196, 230, 0.12);
+}
+
+body.service-detail-page--solutions .solution-layout--compact .service-detail-grid.reverse > * {
+    direction: ltr;
+}
+
+body.service-detail-page--solutions .solution-layout--compact .service-detail-image {
+    order: -1;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    aspect-ratio: 16 / 10;
+    max-height: 220px;
+}
+
+body.service-detail-page--solutions .solution-layout--compact .service-detail-image.glass-card {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background: #0d1826;
+}
+
+body.service-detail-page--solutions .solution-layout--compact .service-detail-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+body.service-detail-page--solutions .solution-layout--compact .service-detail-content {
+    position: relative;
+    padding: 1.2rem 1.35rem 1.45rem;
+    border-inline-start: 3px solid rgba(0, 196, 230, 0.55);
+    flex: 1;
+}
+
+body.service-detail-page--solutions .solution-layout--compact .service-detail-header {
+    margin-bottom: 0.75rem;
+}
+
+body.service-detail-page--solutions .solution-layout--compact .section-title {
+    font-size: clamp(1.15rem, 2vw, 1.4rem);
+}
+
+body.service-detail-page--solutions .solution-layout--compact .service-detail-icon {
+    width: 44px;
+    height: 44px;
+    background: rgba(0, 196, 230, 0.12);
+    border-color: rgba(0, 196, 230, 0.4);
+    box-shadow: 0 0 16px rgba(0, 196, 230, 0.15);
+}
+
+body.service-detail-page--solutions .solution-layout--compact .service-detail-icon .lucide-icon {
+    width: 22px;
+    height: 22px;
+}
+
+body.service-detail-page--solutions .solution-layout--compact .service-bullets {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.85rem;
+}
+
+body.service-detail-page--solutions .solution-layout--compact .service-goal {
+    font-size: 0.92rem;
+    border-top-color: rgba(0, 196, 230, 0.18);
+}
+
+/* --- Featured: cinematic, image-led, cyan wash --- */
+body.service-detail-page--solutions .solution-layout--featured {
+    position: relative;
+    padding-block: clamp(2.5rem, 5vw, 4rem);
+    isolation: isolate;
+}
+
+body.service-detail-page--solutions .solution-layout--featured::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 70% 80% at 78% 45%, rgba(0, 196, 230, 0.14), transparent 58%),
+        radial-gradient(ellipse 50% 60% at 12% 70%, rgba(0, 160, 190, 0.08), transparent 55%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+body.service-detail-page--solutions .solution-layout--featured > .container {
+    position: relative;
+    z-index: 1;
+}
+
+body.service-detail-page--solutions .solution-layout--featured .service-detail-grid {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.35fr);
+    align-items: stretch;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    padding: 0;
+    gap: clamp(1.5rem, 3vw, 2.75rem);
+}
+
+body.service-detail-page--solutions .solution-layout--featured .service-detail-grid.reverse {
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.95fr);
+}
+
+body.service-detail-page--solutions .solution-layout--featured .service-detail-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(0.5rem, 2vw, 1rem) 0;
+}
+
+body.service-detail-page--solutions .solution-layout--featured .section-title {
+    font-size: clamp(1.75rem, 3.2vw, 2.6rem);
+}
+
+body.service-detail-page--solutions .solution-layout--featured .service-detail-icon {
+    background: rgba(0, 196, 230, 0.14);
+    border-color: rgba(0, 196, 230, 0.45);
+    box-shadow: 0 0 20px rgba(0, 196, 230, 0.18);
+}
+
+body.service-detail-page--solutions .solution-layout--featured .service-detail-image {
+    min-height: min(56vh, 540px);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+body.service-detail-page--solutions .solution-layout--featured .service-detail-image.glass-card {
+    border: 1px solid rgba(0, 196, 230, 0.32);
+    box-shadow:
+        0 18px 48px rgba(0, 16, 36, 0.4),
+        0 0 0 1px rgba(0, 196, 230, 0.08),
+        0 0 40px rgba(0, 196, 230, 0.1);
+    background: #0d1826;
+}
+
+body.service-detail-page--solutions .solution-layout--featured .service-detail-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+body.service-detail-page--solutions .solution-layout--featured .service-bullets {
+    font-size: 1.1rem;
+}
+
+body.service-detail-page--solutions .solution-layout--featured .service-goal {
+    border-top-color: rgba(0, 196, 230, 0.2);
+}
+
+/* --- Strip: horizontal closing bar --- */
+body.service-detail-page--solutions .solution-layout--strip {
+    position: relative;
+    padding-block: clamp(2rem, 4vw, 3rem);
+    isolation: isolate;
+}
+
+body.service-detail-page--solutions .solution-layout--strip::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0, 196, 230, 0.06), transparent 40%, rgba(0, 196, 230, 0.08));
+    pointer-events: none;
+    z-index: 0;
+}
+
+body.service-detail-page--solutions .solution-layout--strip > .container {
+    position: relative;
+    z-index: 1;
+}
+
+body.service-detail-page--solutions .solution-layout--strip,
+body.service-detail-page--solutions .solution-layout--strip.bg-gradient {
+    background: #1a2740;
+    border-top: 1px solid rgba(0, 196, 230, 0.28);
+    border-bottom: 1px solid rgba(0, 196, 230, 0.16);
+    box-shadow: none;
+}
+
+body.service-detail-page--solutions .solution-layout--strip .service-detail-grid {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    align-items: center;
+    padding: clamp(1.1rem, 2.2vw, 1.6rem);
+    gap: clamp(1rem, 2.5vw, 2rem);
+    background: rgba(12, 24, 40, 0.45);
+    border: 1px solid rgba(0, 196, 230, 0.26);
+    border-radius: 16px;
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.06) inset,
+        0 10px 28px rgba(0, 16, 36, 0.28);
+}
+
+body.service-detail-page--solutions .solution-layout--strip .service-detail-image {
+    max-height: 280px;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+body.service-detail-page--solutions .solution-layout--strip .service-detail-image.glass-card {
+    border: 1px solid rgba(0, 196, 230, 0.28);
+    box-shadow: 0 8px 24px rgba(0, 16, 36, 0.3);
+}
+
+body.service-detail-page--solutions .solution-layout--strip .service-detail-image img {
+    width: 100%;
+    height: 100%;
+    max-height: 280px;
+    object-fit: cover;
+}
+
+/* Lifted featured bands + soft cyan edge */
+body.service-detail-page--solutions .solution-layout--featured.bg-gradient,
+body.service-detail-page--solutions .solution-layout--featured:not(.bg-gradient) {
+    background: #1a2740;
+    border-top: 1px solid rgba(0, 196, 230, 0.16);
+    border-bottom: 1px solid rgba(0, 196, 230, 0.12);
+}
+
+/* Duo band: cooler shared rack surface */
+body.service-detail-page--solutions .solutions-duo-band {
+    position: relative;
+    background:
+        radial-gradient(ellipse 80% 70% at 50% 0%, rgba(0, 196, 230, 0.1), transparent 55%),
+        #152233;
+    border-top: 1px solid rgba(0, 196, 230, 0.2);
+    border-bottom: 1px solid rgba(0, 196, 230, 0.14);
+}
+
+/* Thin horizontal spine linking featured ↔ duo ↔ featured */
+body.service-detail-page--solutions .solutions-duo-band::before,
+body.service-detail-page--solutions .solutions-duo-band::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 28px;
+    transform: translateX(-50%);
+    background: linear-gradient(180deg, transparent, rgba(0, 196, 230, 0.55), transparent);
+    pointer-events: none;
+    z-index: 2;
+}
+
+body.service-detail-page--solutions .solutions-duo-band::before {
+    top: -14px;
+}
+
+body.service-detail-page--solutions .solutions-duo-band::after {
+    bottom: -14px;
+}
+
+/* Overview: tighter so it doesn’t feel like empty theater */
+body.service-detail-page--solutions .solutions-section {
+    padding-block: clamp(2rem, 4vw, 3rem);
+}
+
+body.service-detail-page--solutions .solutions-section .section-header {
+    margin-bottom: 0;
+}
+
+@media (max-width: 959px) {
+    body.service-detail-page--solutions .solution-layout--featured .service-detail-grid,
+    body.service-detail-page--solutions .solution-layout--featured .service-detail-grid.reverse,
+    body.service-detail-page--solutions .solution-layout--strip .service-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    body.service-detail-page--solutions .solution-layout--featured .service-detail-image {
+        min-height: 260px;
+        order: -1;
+    }
+
+    body.service-detail-page--solutions .solution-layout--featured .service-detail-grid.reverse .service-detail-image {
+        order: -1;
+    }
+
+    /* Horizontal connector + top/bottom sockets when stacked */
+    body.service-detail-page--solutions .solutions-duo {
+        gap: var(--duo-gap);
+    }
+
+    body.service-detail-page--solutions .solutions-duo > .service-detail-section:first-child .service-detail-grid,
+    body.service-detail-page--solutions .solutions-duo > .service-detail-section:first-child .service-detail-grid.reverse {
+        -webkit-mask-image: var(--notch-mask-bottom);
+        mask-image: var(--notch-mask-bottom);
+    }
+
+    body.service-detail-page--solutions .solutions-duo > .service-detail-section:last-child .service-detail-grid,
+    body.service-detail-page--solutions .solutions-duo > .service-detail-section:last-child .service-detail-grid.reverse {
+        -webkit-mask-image: var(--notch-mask-top);
+        mask-image: var(--notch-mask-top);
+    }
+
+    body.service-detail-page--solutions .solutions-duo::before {
+        content: "";
+        position: absolute;
+        left: 18%;
+        right: 18%;
+        top: 50%;
+        height: 1.5px;
+        width: auto;
+        bottom: auto;
+        transform: none;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(0, 196, 230, 0.6),
+            transparent
+        );
+        z-index: 5;
+        pointer-events: none;
+    }
+
+    body.service-detail-page--solutions .solutions-duo::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: var(--node-size);
+        height: var(--node-size);
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background: #081428;
+        border: 2.5px solid rgba(0, 196, 230, 0.95);
+        box-shadow: 0 0 18px rgba(0, 196, 230, 0.5);
+        z-index: 6;
+        pointer-events: none;
+    }
+}
+
+/* Slow continuous Ken Burns on solution photos */
+@keyframes solutions-ken-burns {
+    from { transform: scale(1); }
+    to { transform: scale(1.08); }
+}
+
+body.service-detail-page--solutions .service-detail-image {
+    overflow: hidden;
+}
+
+body.service-detail-page--solutions .service-detail-image img {
+    animation: solutions-ken-burns 12s ease-in-out infinite alternate;
+    will-change: transform;
+    transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.service-detail-page--solutions .service-detail-image img {
+        animation: none;
+    }
+}

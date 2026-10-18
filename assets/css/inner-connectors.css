@@ -1,0 +1,55 @@
+/* ===== INNER PAGES — brand titles + services photo zoom (no dot connectors) ===== */
+
+/* IT Foundation brand title gradient */
+body.service-detail-page--services .service-detail-section .section-title,
+.partners-clients .section-title,
+.partners-section .category-header .section-title,
+.partners-section .partner-card h3,
+.benefits-section .section-title,
+.benefits-section .benefit-card h3 {
+    background: linear-gradient(135deg, var(--teal-vivid) 0%, var(--gold-bright) 50%, var(--teal-vivid) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: gradientShimmer 8s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.service-detail-page--services .service-detail-section .section-title,
+    .partners-clients .section-title,
+    .partners-section .category-header .section-title,
+    .partners-section .partner-card h3,
+    .benefits-section .section-title,
+    .benefits-section .benefit-card h3 {
+        animation: none;
+        background-size: 100% auto;
+    }
+}
+
+/* Services: Ken Burns on detail photos only */
+@keyframes services-ken-burns {
+    from { transform: scale(1); }
+    to { transform: scale(1.08); }
+}
+
+body.service-detail-page--services .service-detail-image {
+    overflow: hidden;
+}
+
+body.service-detail-page--services .service-detail-image img {
+    animation: services-ken-burns 12s ease-in-out infinite alternate;
+    will-change: transform;
+    transition: none;
+}
+
+body.service-detail-page--services .service-detail-image:hover img {
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.service-detail-page--services .service-detail-image img {
+        animation: none;
+    }
+}
